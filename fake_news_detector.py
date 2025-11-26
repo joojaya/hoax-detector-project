@@ -284,10 +284,11 @@ def analytics_page(y_test, y_pred):
         <style>
         /* Styling for the Streamlit metric box elements */
         .css-1y4c5n1 {{
-            background-color: #5d3f6a; /* Darker background color */
+            background-color:#ffffff; /* White text */ 
             padding: 15px 15px;
             border-radius: 10px;
-            color: #ffffff; /* White text */
+            color:#5d3f6a; /* Darker background color */
+
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             text-align: center;
         }}
