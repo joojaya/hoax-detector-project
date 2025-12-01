@@ -112,7 +112,7 @@ def login_page():
             return ""
 
 # IMPORTANT: Ensure Bg.png is in the same directory as your script
-    image_base64 = get_base64_image("Bg.png")
+    image_base64 = get_base64_image("c.avif")  # Replace with your image file
 
     
     # Inject custom CSS for background image AND hiding header elements
@@ -150,7 +150,7 @@ def login_page():
             border: 1px solid #e6e9ef;
             border-radius: 0.5rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            max-width: 450px;
+            max-width: 300px;
             margin: 0 auto;
             background-color: rgba(138, 138, 175, 0.55); /* Slightly transparent white for readability */
         }}
@@ -162,32 +162,13 @@ def login_page():
 
         .stTitle {{
             color: #1a1a1a;
-            font-weight: 700;
+            font-weight: 1000;
             font-size: 3rem;
-            padding: 0.8rem 1.6rem;
-            letter-spacing: 10px;
-            
-            background: linear-gradient(
-                to right,
-                rgba(255, 255, 255, 0.85),
-                rgba(245, 245, 245, 0.7)
-            );
-
-            border-radius: 12px;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-
-            backdrop-filter: blur(6px);
-            -webkit-backdrop-filter: blur(6px);
-
+            text-align: center; 
             letter-spacing: 0.5px;
-            transition: 0.3s ease;
         }}
 
-        .stTitle:hover {{
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-        }}
-        </style>
+       </style>
         """,
         unsafe_allow_html=True
     )
@@ -284,11 +265,10 @@ def analytics_page(y_test, y_pred):
         <style>
         /* Styling for the Streamlit metric box elements */
         .css-1y4c5n1 {{
-            background-color:#ffffff; /* White background color*/ 
+            background-color: #5d3f6a; /* Darker background color */
             padding: 15px 15px;
             border-radius: 10px;
-            color:#5d3f6a; /* Darker text  */
-
+            color: #ffffff; /* White text */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             text-align: center;
         }}
@@ -296,7 +276,7 @@ def analytics_page(y_test, y_pred):
             color: #f1f1f1 !important; /* Lighter text for the label */
         }}
         .css-1y4c5n1 div[data-testid="stMetricValue"] {{
-            color: #5d3f6a !important; /* dark text for the value */
+            color: #ffffff !important; /* White text for the value */
             font-size: 2.5em !important;
             font-weight: 700;
         }}
@@ -351,16 +331,6 @@ def analytics_page(y_test, y_pred):
     report_df = pd.DataFrame(report).transpose().drop(columns=['support'], errors='ignore')
 
     st.dataframe(report_df, use_container_width=True)
-    st.markdown(
-    """
-    <style>
-        .analytics-text p, .analytics-text li, .analytics-text {
-            color: white !important;
-        }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
 
     st.markdown("""
     - **Precision:** Out of all predicted 'Fake' items, how many were actually fake?
@@ -425,7 +395,7 @@ def authenticated_app(tfidf_vectorizer, model, y_test, y_pred):
         }}
 
         .stText, .stMarkdown, .stSubheader, .stTitle, .stLabel, h1, h2, h3 {{
-            color: #333333; /* Darker text for contrast */
+            color: white; /* Darker text for contrast */
             text-shadow: 1px 1px 2px rgba(255,255,255,0.7); /* Subtle shadow for text on background */
         }}
 
