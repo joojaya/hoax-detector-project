@@ -351,6 +351,16 @@ def analytics_page(y_test, y_pred):
     report_df = pd.DataFrame(report).transpose().drop(columns=['support'], errors='ignore')
 
     st.dataframe(report_df, use_container_width=True)
+    st.markdown(
+    """
+    <style>
+        .analytics-text p, .analytics-text li, .analytics-text {
+            color: white !important;
+        }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
     st.markdown("""
     - **Precision:** Out of all predicted 'Fake' items, how many were actually fake?
