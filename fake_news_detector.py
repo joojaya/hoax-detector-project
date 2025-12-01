@@ -284,10 +284,10 @@ def analytics_page(y_test, y_pred):
         <style>
         /* Styling for the Streamlit metric box elements */
         .css-1y4c5n1 {{
-            background-color:#ffffff; /* White text */ 
+            background-color:#ffffff; /* White background color*/ 
             padding: 15px 15px;
             border-radius: 10px;
-            color:#5d3f6a; /* Darker background color */
+            color:#5d3f6a; /* Darker text  */
 
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             text-align: center;
@@ -296,7 +296,7 @@ def analytics_page(y_test, y_pred):
             color: #f1f1f1 !important; /* Lighter text for the label */
         }}
         .css-1y4c5n1 div[data-testid="stMetricValue"] {{
-            color: #ffffff !important; /* White text for the value */
+            color: #5d3f6a !important; /* dark text for the value */
             font-size: 2.5em !important;
             font-weight: 700;
         }}
